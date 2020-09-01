@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Didot';
+    src: url(../public/DidotRegular.ttf);
+}
+
+.initProcess {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    
+    color: white;
+    background-color: #640D14;
+    opacity: 1;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    font-family: "Didot", serif;
+    
+    div {
+        
+        span {
+            display: flex;
+            justify-content: center;
+            
+            div {
+                display: inline-block;
+                
+                top: 0;
+                padding: 14px 0;
+                margin: 0 20px;
+                width: 185px;
+                height: 50px;
+                border: 1px solid white;
+                
+                padding-left: 3px;
+                
+                font-size: 19px;
+                
+                cursor: crosshair;
+                
+                transition: background-color .5s, color .5s;
+                &:hover {
+                    background-color: white;
+                    color: #250902;
+                }
+            }
+        }
+    }
+}

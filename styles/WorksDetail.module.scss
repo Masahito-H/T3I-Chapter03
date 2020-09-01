@@ -1,0 +1,94 @@
+.worksDetail {
+    position: absolute;
+    transform: translate(0, -50%);
+    left: 50.4vw;
+    top: calc(50vh - 70px);
+    width: 35vw;
+    height: 60vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    overflow-y: auto;
+    
+    padding: 0;
+    margin: 0;
+    
+    color: white;
+    background-color: rgb(0, 0, 0, .2);
+    font-family: 'Didot', serif;
+    
+    hr {
+        margin: 0;
+        width: 90%;
+    }
+}
+
+.portfolioHead {
+    h2 {
+        margin-bottom: 3px;
+    }
+    
+    h3 {
+        margin-top: 3px;
+    }
+}
+
+.portfolioDescribe {
+    padding-left: 9px;
+    padding-right: calc(10% + 12px);
+    
+    p {
+        margin-bottom: 3px;
+    }
+    
+    a {
+        display: inline-block;
+    }
+    
+    div {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.githubLink {
+    margin-bottom: 16px;
+}
+
+.innerHtml {
+    a {
+        
+    }
+}
+
+.portfolioView {
+    position: absolute;
+    transform: translate(-100%, -50%);
+    left: 49.6vw;
+    top: calc(50vh - 70px);
+    width: 35vw;
+    height: 60vh;
+    
+    iframe {
+        width: inherit;
+        height: inherit;
+    }
+}
+
+
+.backLink {
+    position: absolute;
+    
+    transform: translateX(-100%);
+    top: calc(80vh - 70px);
+    left: 85.4vw;
+    
+    font-family: 'Didot', serif;
+    font-size: 23px;
+    
+    cursor: crosshair;
+    
+    color: white;
+}
