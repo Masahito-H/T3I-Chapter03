@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "next export",
     "deploy": "yarn build && yarn export",
-    "start": "next start",
+    "start": "next start"
   },
   "dependencies": {
     "howler": "^2.2.0",
