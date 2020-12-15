@@ -5,12 +5,12 @@
 
 .img {
     position: absolute;
-    
+
     padding: 0;
     margin: 0;
-    
+
     opacity: .6;
-    
+
     left: calc(50vw - 390px);
     top: calc(50vh + 45px);
     transform: translate(-50%, -50%);
@@ -20,22 +20,23 @@
     position: absolute;
     display: flex;
     justify-content: center;
-    
-    
+
+
     padding: 27px 0;
     margin: 0;
-    
+
     color: white;
     background-color: rgb(0, 0, 0, .3);
-    
+
     width: 1090px;
+    height: 455px;
     left: 50vw;
     top: 44vh;
     transform: translate(-45%, -50%);
-    
+
     font-family: "Didot", serif;
     text-align: center;
-    
+
     h2 {
         padding-right: 90px;
         padding-top: 3px;
