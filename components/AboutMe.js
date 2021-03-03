@@ -28,6 +28,17 @@ export default function AboutMe(){
         exiting: { opacity: 0, top: "calc(50vh - 40px)" },
         exited: { opacity: 0, top: "calc(50vh - 40px)" }
     };
+    const defaultStyleFunc = {
+        transition: "opacity .5s, left .5s",
+        opacity: 1,
+        left: "calc(50vw + 200px)"
+    };
+    const transitionStyleFunc = {
+        entering: { opacity: 1, left: "calc(50vw + 260px)" },
+        entered: { opacity: 1, left: "calc(50vw + 260px)" },
+        exiting: { opacity: 0, left: "calc(50vw + 140px)" },
+        exited: { opacity: 0, left: "calc(50vw + 140px)" }
+    };
     
     useEffect(() => {
         setTimeout(() => {
@@ -59,6 +70,8 @@ export default function AboutMe(){
                             <hr />
                             <h3 className="memberSkill">プログラミングスキル</h3>
                             <p>C++(openFrameworks) / Java / Processing /<br /> javascript(jQuery, Vue.js, Nuxt.js, p5.js, React, three.js, Howler.js) / Python / etc..</p>
+                            
+                            
                         </div>
                     </div>
                 )}
@@ -68,6 +81,17 @@ export default function AboutMe(){
                     <img src="la.png" width="380vh" style={{...defaultStyleImg, ...transitionStyleImg[state]}} className={style.img} />
                 )}
             </Transition>
+            
+            <Transition in={initMotionFlag} timeout={1000}>
+                {(state) => (
+                    <a id="function-list" href="https://docs.google.com/spreadsheets/d/1vni9QR5hQmeM8H7di9dCajCkrwmHjsemvcBw_6CoGnA" target="_blink" style={{...defaultStyleFunc, ...transitionStyleFunc[state]}} className={style.funcList}>
+                        <div id="function-list-button">
+                            <span>ポートフォリオ<br />機能一覧表</span>
+                        </div>
+                    </a>
+                )}
+            </Transition>
+            
         </Fragment>
     );
 }

@@ -34,6 +34,7 @@ function MyApp({ Component, pageProps }) {
         proload: false
     }));
     
+    
     useEffect(() => {
         let audio = [], endSign = [];
         [audioTop, audioAbout, audioWorks].forEach((elem) => {
@@ -86,7 +87,7 @@ function MyApp({ Component, pageProps }) {
     }, []);
     
     useEffect(() => {
-        let currentAudio = null;
+        let currentAudio = null, nextAudio = null;
         Router.events.on("routeChangeStart", (url) => {
             switch(Router.router.pathname){
                 case "/":
@@ -102,17 +103,30 @@ function MyApp({ Component, pageProps }) {
         });
         Router.events.on("routeChangeComplete", (url) => {
             if(audioSwitch){
-                currentAudio.fade(1, 0, 3000);
-                switch(url){
+                switch(Router.router.pathname){
                     case "/":
-                        audioTop.fade(0, 1, 3000);
+                        nextAudio = audioTop;
                         break;
                     case "/about":
-                        audioAbout.fade(0, 1, 3000);
+                        nextAudio = audioAbout;
                         break;
                     case "/works":
-                        audioWorks.fade(0, 1, 3000);
+                        nextAudio = audioWorks;
                         break;
+                    
+                }
+                
+                if(currentAudio !== nextAudio){
+                    currentAudio.fade(currentAudio.volume(), 0, 3000);
+                    nextAudio.fade(nextAudio.volume(), 1, 3000);
+                }
+                else if(Router.router.pathname === "/works"){
+                    if(url === "/works/2"){
+                        audioWorks.fade(1, 0, 3000);
+                    }
+                    else{
+                        audioWorks.fade(audioWorks.volume(), 1, 3000);
+                    }
                 }
             }
     });
