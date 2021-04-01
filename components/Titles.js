@@ -10,9 +10,9 @@ export default class Titles extends Component{
             h1MotionFlag: false,
             h2MotionFlag: false
         };
-        
+
     }
-    
+
     componentDidMount(){
         new Promise((res) => {
             setTimeout(() => {
@@ -25,7 +25,7 @@ export default class Titles extends Component{
             }, 700);
         });
     }
-    
+
     render(){
         const defaultStyleTitle = {
             transition: "letter-spacing 1.5s, opacity 1.5s",
@@ -38,7 +38,7 @@ export default class Titles extends Component{
             exiting: { letterSpacing: "-10px", opacity: 0 },
             exited: { letterSpacing: "-10px", opacity: 0 }
         };
-        
+
         const defaultStyleCp3 = {
             transition: "opacity .7s",
             opacity: 1
@@ -49,7 +49,7 @@ export default class Titles extends Component{
             exiting: { opacity: 0 },
             exited: { opacity: 0 }
         };
-        
+
         const defaultStyleReactNext = {
             transition: "opacity .7s, transform .7s",
             opacity: 1,
@@ -61,12 +61,12 @@ export default class Titles extends Component{
             exiting: { opacity: 0, transform: "translateX(-50%) translateY(150%)" },
             exited: { opacity: 0, transform: "translateX(-50%) translateY(150%)" }
         };
-        
+
         return (
             <Fragment>
                 <Transition in={this.state.h1MotionFlag} timeout={2000}>
                     {(state) => (
-                        <h1 style={{...defaultStyleTitle, ...transitionStyleTitle[state]}} className={style.title}>The Three Interaction</h1>
+                        <h1 style={{...defaultStyleTitle, ...transitionStyleTitle[state]}} className={style.title}>The Three Interactions</h1>
                     )}
                 </Transition>
                 <Transition in={this.state.h2MotionFlag} timeout={1000}>
