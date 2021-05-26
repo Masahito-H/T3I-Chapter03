@@ -21,12 +21,12 @@ function MyApp({ Component, pageProps }) {
     const [audioTop, setAudioTop] = useState(new Howl({
         src: ["/msrc/AATopPlus.mp3"],
         volume: 1,
-        preload: false,
+        preload: false
     }));
     const [audioAbout, setAudioAbout] = useState(new Howl({
         src: ["./msrc/AAAboutPlus.mp3"],
         volume: 0,
-        preload: false,
+        preload: false
     }));
     const [audioWorks, setAudioWorksAbout] = useState(new Howl({
         src: ["./msrc/AAWorksPlus.mp3"],
