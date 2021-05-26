@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
 
     const [audioTop, setAudioTop] = useState(new Howl({
         src: ["/msrc/AATopPlus.mp3"],
-        volume: 1,
+        volume: 0,
         preload: false
     }));
     const [audioAbout, setAudioAbout] = useState(new Howl({
