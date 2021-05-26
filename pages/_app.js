@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
     const [warningCloseStep1, setWarningCloseStep1] = useState(true);
     const [warningCloseStep2, setWarningCloseStep2] = useState(true);
     let audioSwitch = false;
-    
+
     const [audioTop, setAudioTop] = useState(new Howl({
         src: ["/msrc/AATopPlus.mp3"],
         volume: 1,
@@ -31,10 +31,10 @@ function MyApp({ Component, pageProps }) {
     const [audioWorks, setAudioWorksAbout] = useState(new Howl({
         src: ["./msrc/AAWorksPlus.mp3"],
         volume: 0,
-        proload: false
+        preload: false
     }));
-    
-    
+
+
     useEffect(() => {
         let audio = [], endSign = [];
         [audioTop, audioAbout, audioWorks].forEach((elem) => {
@@ -50,24 +50,24 @@ function MyApp({ Component, pageProps }) {
                 elem.load();
             }));
         });
-        
+
         Promise.all([...audio]).then(() => {
             Promise.all([...endSign]).then(() => {
                 audioTop.play();
                 audioAbout.play();
                 audioWorks.play();
-                
+
                 recursiveLoop();
             });
         });
-        
+
         return () => {
             Howler.stop();
         };
-        
+
         function recursiveLoop(){
             endSign = [];
-            
+
             [audioTop, audioAbout, audioWorks].forEach((elem) => {
                 endSign.push(new Promise((res) => {
                     elem.on("end", () => {
@@ -75,17 +75,17 @@ function MyApp({ Component, pageProps }) {
                     });
                 }));
             });
-            
+
             Promise.all([...endSign]).then(() => {
                 audioTop.play();
                 audioAbout.play();
                 audioWorks.play();
-                
+
                 recursiveLoop();
             });
         }
     }, []);
-    
+
     useEffect(() => {
         let currentAudio = null, nextAudio = null;
         Router.events.on("routeChangeStart", (url) => {
@@ -113,9 +113,9 @@ function MyApp({ Component, pageProps }) {
                     case "/works":
                         nextAudio = audioWorks;
                         break;
-                    
+
                 }
-                
+
                 if(currentAudio !== nextAudio){
                     currentAudio.fade(currentAudio.volume(), 0, 3000);
                     nextAudio.fade(nextAudio.volume(), 1, 3000);
@@ -131,7 +131,7 @@ function MyApp({ Component, pageProps }) {
             }
     });
     }, []);
-    
+
     const clickAction = (e, b) => {
         new Promise((res) => {
             setWarningCloseStep1(false);
@@ -153,12 +153,12 @@ function MyApp({ Component, pageProps }) {
             else{
                 audioSwitch = false;
             }
-            
+
             setTimeout(() => {
                 audioTop.play();
                 audioAbout.play();
                 audioWorks.play();
-                
+
                 if(b){
                     let tawMatch = [0, 0, 0];
                     switch(Router.router.pathname){
@@ -172,7 +172,7 @@ function MyApp({ Component, pageProps }) {
                             tawMatch[2] = 1;
                             break;
                     }
-                    
+
                     audioTop.fade(0, tawMatch[0], 3000);
                     audioAbout.fade(0, tawMatch[1], 3000);
                     audioWorks.fade(0, tawMatch[2], 3000);
@@ -182,12 +182,12 @@ function MyApp({ Component, pageProps }) {
                     audioAbout.volume(0);
                     audioWorks.volume(0);
                 }
-                
+
                 setIsWarningFrag2(false);
             }, 1500);
         });
     };
-    
+
     const defaultStyleCloseStep1 = {
         transition: "opacity .4s",
         opacity: 1
@@ -208,7 +208,7 @@ function MyApp({ Component, pageProps }) {
         exiting: { opacity: 0 },
         exited: { opacity: 0 }
     };
-    
+
     return (
         <Fragment>
             <Head>
