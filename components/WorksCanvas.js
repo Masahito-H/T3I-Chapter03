@@ -143,10 +143,10 @@ const WorkImage = (props) => {
 
     useFrame(({ gl }) => void ((gl.autoClear = false), (groupRef.current.visible = true), gl.render(workImgRef.current, props.camera), (groupRef.current.visible = false)));
     useFrame(() => {
+      /*
         if(velocity !== 0 && (velocity < 1 && velocity > -1)){
             setVelocity(0);
         }
-        /*
         else if(groupRef2.current.position.y < 0){
             groupRef2.current.position.y = 0;
             setVelocity(velocity * .8);
@@ -156,7 +156,7 @@ const WorkImage = (props) => {
             setVelocity(velocity * .8);
         }
         */
-        else if(velocity > 0){
+        if(velocity > 0){
             groupRef2.current.translateY(velocity);
             setVelocity(velocity - 1);
             console.log(groupRef2.current);
