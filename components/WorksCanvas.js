@@ -146,11 +146,11 @@ const WorkImage = (props) => {
         if(velocity !== 0 && (velocity < 1 && velocity > -1)){
             setVelocity(0);
         }
+        /*
         else if(groupRef2.current.position.y < 0){
             groupRef2.current.position.y = 0;
             setVelocity(velocity * .8);
         }
-        /*
         else if(groupRef2.current.position.y > size.height / 2 * (groupRef2.current.children.length - 1)){
             groupRef2.current.position.y = size.height / 2 * (groupRef2.current.children.length - 1);
             setVelocity(velocity * .8);
