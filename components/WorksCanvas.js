@@ -120,13 +120,13 @@ const WorkImage = (props) => {
     srcArray.forEach((data, i) => {
         textureArray.push(loader.load("../" + data, () => {
             let img = groupRef2.current.children[i].material.map.image;
-            console.log(yPos);
+            //console.log(yPos);
             if(img){
                 let aspectProd = (img.height / img.width) * (size.width / size.height);
                 groupRef2.current.children[i].scale.set(.75, 1.25 * aspectProd, 1);
                 groupRef2.current.children[i].position.y = yPos;
                 yPos -= (size.height / 4 + size.height / 8) * aspectProd;
-                console.log(yPos);
+                //console.log(yPos);
             }
         }));
     });
