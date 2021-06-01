@@ -156,8 +156,8 @@ const WorkImage = (props) => {
             setVelocity(velocity * .8);
         }
         */
-        console.log(groupRef2.current);
-        console.log(groupRef2.current.position);
+        console.log(velocity);
+
         if(velocity > 0){
             groupRef2.current.translateY(velocity);
             setVelocity(velocity - 1);
