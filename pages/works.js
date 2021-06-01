@@ -12,11 +12,12 @@ export default function Works(props){
     const router = useRouter();
     const [indexNum, setIndexNum] = useState(-1);
     const [delta, setDelta] = useState(0);
-    
+
     const wheelAction = useCallback((e) => {
         setDelta(e.deltaY);
+        console.log(e.deltaY);
     });
-    
+
     return (
         <div className={style.worksPage} onWheel={wheelAction}>
             <WorksCanvas indexNum={indexNum} setIndexNum={setIndexNum} delta={delta} setDelta={setDelta} />
@@ -42,4 +43,3 @@ export default function Works(props){
         </div>
     );
 }
-
