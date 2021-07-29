@@ -1,4 +1,5 @@
 [[redirects]]
-from = "/works/*"
-to = "/works"
-status = 301
+  from = "/works/*"
+  to = "/works"
+  status = 301
+  force = true
