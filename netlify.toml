@@ -2,3 +2,4 @@
   from = "/works/*"
   to = "/works"
   status = 301
+  force = true
