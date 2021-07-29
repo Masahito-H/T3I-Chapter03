@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/works/*"
+to = "/works"
+status = 404
