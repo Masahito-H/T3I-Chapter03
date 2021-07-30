@@ -2,4 +2,4 @@
   from = "/works/*"
   to = "https://t3i-chapter03-prototype.netlify.app/works"
   status = 301
-  force = true
+  force = false
