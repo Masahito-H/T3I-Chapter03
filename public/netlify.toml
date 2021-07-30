@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/works"
-  to = "/works?redirect=test"
+  from = "/works/*"
+  to = "/works"
   status = 301
   force = true
